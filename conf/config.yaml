@@ -1,0 +1,20 @@
+project_name: "varde-mnist"
+device: "mps"   #cpu, cuda, mps
+max_epochs: 10
+batch_size: 64
+batch_size_test: 16
+lr: 0.001
+iscustom: False
+logger: tb #wandb, tb
+save_model: True
+save_model_interval: 1
+
+defaults:
+  - _self_
+  - dataset: CIFAR100
+  - criterion: CrossEntropyLoss  
+  - model: CIFAR100_ConvNet
+  - optimizer: RMSprop     #Adadelta, Adagrad, Adam, Adamax, RMSprop, SGD
+  - scheduler: ReduceLROnPlateau   #StepLR, ReduceLROnPlateau, CosineAnnealingLR
+  - paths: paths
+  # - optuna: optuna
