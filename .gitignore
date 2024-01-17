@@ -1,8 +1,0 @@
-files/
-outputs/
-runs/
-wandb/
-data/
-*__pycache__
-.DS_Store
-z_ref/
