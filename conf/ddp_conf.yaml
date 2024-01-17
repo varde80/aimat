@@ -1,0 +1,34 @@
+params:
+  project_name: "varde-mnist"
+  device: "mps"
+  max_epochs: 100
+  criterion: "CrossEntropyLoss"
+optimizer:
+  _target_: Optimizer
+  algo: Adam
+  lr: 0.001
+scheduler:
+  #scheduler: "WarmupLR"
+  #warmup_end_steps: 1500
+  #early_stopping_flag: True
+  #patience: 5                # patience for early stopping
+  #delta: 0.0                  # delta for early stopping
+  
+paths:
+  data_dir: ${hydra:runtime.cwd}/data/
+  log_dir: ${hydra:runtime.cwd}/runs/
+
+models:
+  model_name: "CIFAR100_ConvNet"
+
+data:
+  dataset_name: "CIFAR100"
+  batch_size: 64
+  batch_size_test: 16
+  iscustom: False
+  
+logger:
+  wandb_flag: False  #if flase tensorboard will be used
+
+#optuna:
+#  num_trials: 100

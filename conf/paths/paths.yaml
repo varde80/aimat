@@ -1,0 +1,3 @@
+data_dir: ${hydra:runtime.cwd}/data/
+log_dir: ${hydra:runtime.cwd}/runs/
+save_dir: ${hydra:runtime.cwd}/ckpt/
