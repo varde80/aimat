@@ -28,7 +28,7 @@ from aimat.core import set_dataloader
 cs = ConfigStore.instance()
 cs.store(name="AIMat_config", node=AIMatConfig)
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config2")
 def main(cfg: AIMatConfig):
 #def main(cfg):
 #    print(cfg)    

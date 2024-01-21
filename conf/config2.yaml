@@ -1,0 +1,20 @@
+project_name: "resnet50-cifar10"
+device: "cuda"   #cpu, cuda, mps
+max_epochs: 10
+batch_size: 64
+batch_size_test: 16
+lr: 0.1
+iscustom: False
+logger: tb #wandb, tb
+save_model: True
+save_model_interval: 1
+
+defaults:
+  - _self_
+  - dataset: CIFAR10
+  - criterion: CrossEntropyLoss  
+  - model: vgg #vit, resnet, vgg, resnext
+  - optimizer: Adam     #Adadelta, Adagrad, Adam, Adamax, RMSprop, SGD
+  - scheduler: ReduceLROnPlateau   #StepLR, ReduceLROnPlateau, CosineAnnealingLR
+  - paths: paths
+  # - optuna: optuna
