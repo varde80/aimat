@@ -1,0 +1,39 @@
+project_name: varde-mnist
+device: mps
+max_epochs: 10
+batch_size: 64
+batch_size_test: 16
+lr: 0.001
+iscustom: false
+logger: tb
+save_model: true
+save_model_interval: 1
+dataset:
+  dataset: CIFAR100
+criterion:
+  _target_: torch.nn.CrossEntropyLoss
+model:
+  _target_: aimat.models.CIFAR100_ConvNet
+optimizer:
+  _target_: torch.optim.RMSprop
+  lr: ${lr}
+  alpha: 0.99
+  eps: 1.0e-08
+  weight_decay: 0
+  momentum: 0
+  centered: false
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  mode: min
+  factor: 0.1
+  patience: 10
+  threshold: 0.0001
+  threshold_mode: rel
+  cooldown: 0
+  min_lr: 0
+  eps: 1.0e-08
+  verbose: false
+paths:
+  data_dir: ${hydra:runtime.cwd}/data/
+  log_dir: ${hydra:runtime.cwd}/runs/
+  save_dir: ${hydra:runtime.cwd}/ckpt/
