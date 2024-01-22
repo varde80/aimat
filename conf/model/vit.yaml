@@ -1,0 +1,5 @@
+_target_: aimat.models.ViT
+model_type: 'vit_base_patch16_224'  # Can be 'vit_base_patch16_224', 'vit_base_patch32_224', 'vit_large_patch16_224', 'vit_large_patch32_224', etc.
+pretrained: True                    # Use pretrained weights
+num_classes: 1000                   # Number of output classes
+

@@ -1,0 +1,7 @@
+_target_: aimat.models.ResNeXt
+model_type: 'resnext50_32x4d'  # Can be 'resnext50_32x4d', 'resnext101_32x8d', 'resnext101_64x4d' etc.
+num_classes: 1000             # Number of output classes
+input_size:
+  channels: 3                 # Number of input channels
+  # Add other parameters if needed
+

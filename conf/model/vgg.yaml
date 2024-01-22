@@ -1,0 +1,6 @@
+_target_: aimat.models.VGG
+model_type: 'vgg16'  # Can be 'vgg11', 'vgg13', 'vgg16', 'vgg19', etc.
+num_classes: 1000    # Number of output classes
+input_size:
+  channels: 3        # Number of input channels
+  # Add other parameters if needed
