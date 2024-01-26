@@ -58,3 +58,4 @@ instance/
 # Scrapy stuff:
 .scrapy
 
+.DS_Store
